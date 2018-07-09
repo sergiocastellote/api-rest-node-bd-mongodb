@@ -11,43 +11,43 @@ module.exports = app => {
 
     //get books
     app.get('/books', (req, res) => {
-        db.movies.find((err, movies) => {
+        db.books.find((err, books) => {
             res.json({
-                movies
+                books
             })
         });
     });
 
     //get one book
     app.get('/books/:id', (req, res) => {
-        db.movies.find({
+        db.books.find({
             _id: mongojs.ObjectId(req.params.id)
 
-        }, (err, movies) => {
+        }, (err, books) => {
             res.json({
-                movies
+                books
             })
         });
     });
 
     //add book
     app.post('/books', (req, res) => {
-        let newMovie = req.body;
-        db.movies.insert(newMovie, (err, movie) => {
+        let newBook = req.body;
+        db.books.insert(newBook, (err, book) => {
             res.json({
-                movie
+                book
             })
         })
     });
 
     //modify book
     app.put('/books/:id', (req, res) => {
-        let updateMovie = req.body;
-        db.movies.update(
+        let updateBook = req.body;
+        db.books.update(
             {
                 _id: mongojs.ObjectId(req.params.id)
             },
-            updateMovie,
+            updateBook,
             {},
             (err, response) => {
                 res.json({
@@ -60,7 +60,7 @@ module.exports = app => {
 
     //delete book
     app.delete('/books/:id', (req, res) => {
-        db.movies.remove({
+        db.books.remove({
             _id: mongojs.ObjectId(req.params.id)
 
         }, (err, response) => {
