@@ -7,7 +7,7 @@ const db = mongojs('DatabaseBooks', [
 
 module.exports = app => {
 
-    //SIGUIENTE PASO SERÍA AÑADIR VALIDACIONES Y GESTIÓN DE ERRORES
+    //next step will be add validations and check errors
 
     //get books
     app.get('/books', (req, res) => {

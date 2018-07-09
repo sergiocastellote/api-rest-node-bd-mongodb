@@ -1,6 +1,6 @@
 #Configure
 
 - Clone project
-- Instal mongodb
+- Install mongodb
 - Execute 'npm install'
 - Execute 'npm start'
